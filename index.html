@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem 0;
+      transition: background-color 0.3s;
+      z-index: 1000;
+    }
+
+    header.scrolled {
+      background-color: #555;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to bottom right, #007BFF, #00C6FF);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .content {
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header id="navbar">
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Welcome to My Landing Page</h1>
+</section>
+
+<section class="content">
+  <h2>About Us</h2>
+  <p>This is a simple landing page with an interactive fixed navigation menu.</p>
+</section>
+
+<script>
+  // Change navbar style on scroll
+  window.addEventListener('scroll', function () {
+    const navbar = document.getElementById('navbar');
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+
+</body>
+</html>
